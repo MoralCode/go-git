@@ -200,7 +200,7 @@ func NewCommitPostorderIterNoMerge(c *Commit, ignore []plumbing.Hash) CommitIter
 		seen[h] = true
 	}
 
-	return &commitPostIterator{
+	return &commitPostIteratorNM{
 		stack: []*Commit{c},
 		seen:  seen,
 	}
