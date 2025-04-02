@@ -448,6 +448,7 @@ const (
 	LogOrderDFSPost
 	LogOrderBSF
 	LogOrderCommitterTime
+	LogOrderDFSPostNoMerge
 )
 
 // LogOptions describes how a log action should be performed.
