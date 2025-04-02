@@ -220,11 +220,11 @@ func (w *commitPostIteratorNM) Next() (*Commit, error) {
 		}
 
 		w.seen[c.Hash] = true
-		// TODO: change this
-		return c, c.Parents().ForEach(func(p *Commit) error {
+		if p, err := c.Parent(0); err != nil {
 			w.stack = append(w.stack, p)
-			return nil
-		})
+		}
+
+		return c, nil
 	}
 }
 
